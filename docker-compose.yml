@@ -1,0 +1,12 @@
+services:
+  web:
+    build: ./apps/web
+    ports:
+      - "3050:3050"
+    volumes:
+      - ./apps/web/src:/app/src
+      - ./apps/web/public:/app/public
+      - ./apps/web/constants:/app/constants
+      - ./apps/web/index.html:/app/index.html
+    environment:
+      - NODE_ENV=development

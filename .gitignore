@@ -1,0 +1,57 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Build
+dist/
+build/
+.next/
+out/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Docker
+docker-compose.override.yml
+
+# Production raw assets (large files, tracked via LFS or external)
+production/landing/raw/
+production/look-dev/sref-candidates/
+
+# Claude Code local settings
+.claude/settings.local.json
+
+# Logs
+*.log
+npm-debug.log*
+
+# Generated media assets in project root (raw Midjourney/Veo exports)
+/v0_*.mp4
+/v0_*.png
+/2ah.mp4
+*.mp4
+!apps/web/public/videos/*.mp4
+
+# Reference projects (have own git history, large)
+reference/

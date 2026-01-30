@@ -1,0 +1,39 @@
+
+00:00:04 
+Hallo Welt. Mein Name ist Nelson Mehlers. Und ich möchte ein Playbook schreiben. Ein Playbook für die neue Welt. Playbook New World V0 Welchen Zweck verfolgt dieses Playbook? Das Playbook verfolgt den Zweck, dem Leser eine neue Denkensstruktur und Handlungsstruktur an die Hand zu geben, das in einer Welt, die von KI geprägt ist, unendlich machtvoll ist.
+00:00:59 
+Wir Menschen sind nicht mehr Führer der Intelligenz. Wir haben einen Stand der künstlichen Intelligenz erreicht, die unsere Intelligenz bei einem Vielfachen wahrscheinlich schon übersteigt. In den meisten Bereichen.
+00:01:30 
+Im Forschungsbereich übernimmt sie aktuell jeden Tag mehrere Aufgaben. Im Bereich des Programmierens ist sie mittlerweile fast unschlagbar. Und bei allen weiteren Aufgaben, die mit Rechenleistung zu lösen sind, ist sie uns weit, weit voraus. Und um in dieser neuen Welt zu bestehen, sich nicht zu verlieren und den Weg der Zufriedenheit zu finden, ist nicht ganz einfach.
+00:02:26 
+In meinem Leben war oft Chaos und deshalb ist für mich eine solche Situation nicht so ungewohnt wie für manch anderer. Und ich hoffe mit diesem Playbook der Welt helfen zu können in eine bessere und menschenwerteorientierte Zukunft zu. kommen.
+00:03:02 
+Das ist das Vorwort zu meinem Playbook gewesen, was ich noch verfeinern möchte. Und jetzt würde ich gerne starten im Endeffekt mit so etwas wie die 10 Gebote. Und ich bin mir noch nicht sicher, wie diese ausfallen werden. Aber ich glaube, wir starten auch immer mit Regel 0. wie bei Computern.
+00:03:35 
+Aufmerksamkeit ist alles. Warum ich das glaube, ist, dass dieses Problem, das Aufmerksamkeitsproblem und den Kontext behalten, das ist, was diese Maschine erst wirklich intelligent gemacht hat. Wenn wir als Menschen es jetzt schaffen, dieses Werkzeug mit der gleichen, Awareness zu benutzen, wie wir ihm beigebracht haben. Dann landen wir in einem ziemlich Infinity Loop of Knowledge, wie ich ihn das nennen würde.
+00:04:12 
+Und dieser Infinity Loop of Knowledge heißt, dass wir, wenn wir durchgehend iterieren mit KI-Modellen, unser Denken und Handeln darauf ausrichten, so ziemlich alles können. alle Probleme lösen können, die wir wollen. Mein Hintergrund ist, ich bin, ich habe Softwareentwicklung studiert, hauptsächlich oder spezialisiert in JavaScript, React, Python, H.
+00:04:43 
+T. M. L., C. N. S. zähl ich jetzt nicht dazu. Das ist jetzt nicht das Schwerste oder das ist nicht das Schwerste, aber ist jetzt nicht das, worauf ich meinen Fokus gelegt habe, da das zu meiner Zeit auch schon ganz gut über U. I. Libraries und sonstige. Einfachlösungen sehr gut ging und die Schwierigkeit, das zu schreiben, finde ich, ist jetzt auch nicht so gegeben. Es ist bloß nicht mehr nötig, wie mit so vielem heute. Es ist nicht mehr nötig, viele Dinge so zu kennen, wie man sie kannte, wo man diese Tools noch nicht hatte und damit meine ich K.I.
+00:05:20 
+hauptsächlich. Und diese neue Struktur, diese Co-Intelligenz, bringt neue Spieler mit aufs Spielfeld und genau dafür schreibe ich dieses Playbook. Sie soll im Endeffekt meinen Werdegang erzählen, wie ich von Grund auf starte, um jedes Problem innerhalb von Software zu lösen. Da gibt es mehrere, ich nenne jetzt nur übergeordnete Punkte.
+00:05:51 
+Zum Beispiel haben wir die Entwicklungsumgebung, die Modelle selber, das Terminal, Dateien, Strukturen, Frameworks, Sprachen, Layer. Viele Agenten, große Probleme, die wir zu kleineren runterhauen. Wenn sie dann noch zu groß sind, zu noch kleineren runterhauen.
+00:06:22 
+Ein Computerprogramm so zu schreiben, dass es, extrem sicher, extrem funktionell und extrem wartbar ist und extrem flexibel. Darum geht es hier und das zusammen mit AI. Und es gibt wie gesagt da Iterationsschritte, man integriert sich durch, man plant viel und was man auch noch macht ist eben.
+00:06:55 
+sich Schritt für Schritt ranzuarbeiten, durch zu iterieren und echte Probleme zu lösen. Echte Lösungen finden für ein bestehendes Problem, um es dann zu entwickeln und hervorzubringen. Der Loop ist im Endeffekt ein Planen, Programmieren, Reviewen, Security planen. Und so geht es weiter.
+00:07:25 
+Und als erstes findet eine ganz große Planung statt, um das Problem auszuleuchten. Und für dieses Ausleuchten nehmen wir User Stories und Acceptance Criterias und versetzen uns in mehrere Personas rein oder erstellen mehrere Agenten Personas, die sich dann in in Menschen oder in einen in eine in eine Datensituation, ja, weil wir sind keine Menschen, in eine Datensituation reindenken. von was ist etwas auf Datenebene und wie können wir diese Daten verarbeiten, weil es gibt nicht allzu viele Sachen, glaube ich, auch da wieder.
+00:08:03 
+Ich bin ein Freund der Runterreduzierung auf das, was da ist, sind Datenpunkte und alles Datenpunkte und wie diese Datenpunkte in einem Verhältnis zueinander stehen und ob sie einzigartig sind, es gibt da, Das möchte ich einmal genau ausleuchten. Aber ich bin der Meinung, es gibt da nicht allzu viel. Und dann können wir alles mit den Daten machen mittlerweile. Und wir können uns wirklich alles ausdenken, was es gibt. Und deshalb können wir eine Welt der Daten erschaffen, wo wir dann auch wieder mit Hilfe von KI und Rechenleistung und Computern alle Probleme lösen.
+00:08:45 
+Und dieses Playbook beschreibt, Von der ersten Sekunde der Planung, von der Idee bis zum fertigen Produkt, jeden Aspekt und dann geht es nur noch über eigenes Erfahren, Handeln und Tun. Es sind keine Dogmen, die hier drin stehen. Es sind auch keine Regeln. Es ist ein Playbook.
+00:09:16 
+Wenn du Fußball spielen gehst oder, in einen Kampf gehst, dann hast du das für dich gebaut, so ein Playbook. Wie meistere ich diese Situation am besten? Und oft erfordert die Situation, weil sie dynamisch ist, dass sich das Playbook ändert. Und das ist okay. Und deswegen ist das hier auch V0 Version 0. Es werden weitere folgen.
+00:09:48 
+Diese Aufnahme war gerade für mich der intensive Start in ein neues Projekt. Ich möchte genau mit diesem Framework das Playbook schreiben. Das werde ich auch tun. Und Opus hilfst mir dabei das Beste da rauszuholen. Dieses Playbook so zu erstellen, dass es den Menschen Macht und Mehrwert gibt.
+00:10:19 
+Ich möchte das erreichen mit einer analogischen Geschichte. Es soll ein bisschen wie die Bibel sein, aber es soll eine, eine Geschichte sein von Weltraumpiraten, die durch den Weltraum reisen und ziemlich viel erleben. Es gibt mehrere Welten, die Erde, die gibt es auch noch.
+00:10:52 
+Und auf diesen Reisen, und so bilden wir das Playbook ab, dass wir, technische Sachen und Analogien runterbrechen, dann den Sinn dazu erklären. Was mir einfällt, ist zum Beispiel Robin Scharmann, der 5 Uhr Club. In diese Welt wollen wir einsteigen und das Playbook schreiben.
