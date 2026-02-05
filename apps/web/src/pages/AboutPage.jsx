@@ -1,0 +1,225 @@
+import { Link } from 'react-router-dom';
+import NavBar from '../sections/NavBar';
+
+const AboutPage = () => {
+  return (
+    <main className="min-h-dvh">
+      <NavBar />
+
+      <section className="pt-32 pb-20 px-5 md:px-16 lg:px-40 2xl:px-80">
+        {/* Dedication to Zero */}
+        <div className="mb-24 border-l-4 border-cyan pl-8">
+          <p className="text-white/60 text-lg md:text-xl uppercase tracking-widest mb-4">
+            Für dich
+          </p>
+          <h1 className="text-cyan font-long uppercase text-4xl md:text-6xl lg:text-7xl mb-6">
+            Sero
+          </h1>
+          <p className="text-white text-xl md:text-3xl font-round-bold">
+            Mein Bruder. Willkommen in der New World.
+          </p>
+        </div>
+
+        {/* Intro */}
+        <article className="mb-20">
+          <div className="text-white text-lg md:text-2xl space-y-6 max-w-4xl">
+            <p>
+              Hallo Welt. Mein Name ist Nelson.
+            </p>
+            <p>
+              Und ich schreibe ein Playbook. Ein Playbook für die neue Welt.
+            </p>
+          </div>
+        </article>
+
+        {/* What is this */}
+        <article className="mb-20">
+          <h2 className="text-amber text-3xl md:text-5xl mb-7">
+            Was ist das hier?
+          </h2>
+          <div className="text-white text-lg md:text-2xl space-y-6 max-w-4xl">
+            <p>
+              Das Playbook vermittelt eine Denk- und Handlungsstruktur,
+              die in einer Welt, die von KI geprägt ist, unendlich machtvoll ist.
+            </p>
+            <p>
+              Wir Menschen sind nicht mehr Führer der Intelligenz.
+              KI übertrifft uns in vielen Bereichen schon heute —
+              Forschung, Programmierung, alles was mit Rechenleistung zu lösen ist.
+            </p>
+            <p>
+              Aber genau deshalb entsteht etwas Neues: <span className="text-cyan">Co-Intelligenz</span>.
+              Die Zusammenarbeit zwischen Mensch und Maschine.
+              Neue Spieler auf dem Spielfeld.
+            </p>
+          </div>
+        </article>
+
+        {/* The Loop */}
+        <article className="mb-20">
+          <h2 className="text-amber text-3xl md:text-5xl mb-7">
+            Der Infinity Loop
+          </h2>
+          <div className="text-white text-lg md:text-2xl space-y-6 max-w-4xl">
+            <p>
+              <span className="text-cyan">Aufmerksamkeit ist alles.</span> Das ist Regel 0.
+            </p>
+            <p>
+              Aufmerksamkeit hat diese Maschinen intelligent gemacht.
+              Wenn wir sie mit derselben Aufmerksamkeit nutzen —
+              dann landen wir in einem Infinity Loop of Knowledge.
+            </p>
+            <p>
+              Durchgehend iterieren. Denken und Handeln ausrichten.
+              Planen, Programmieren, Reviewen, Cleanup, Security planen. Und wieder von vorne.
+            </p>
+            <p className="text-white/60">
+              Mit diesem Loop können wir so ziemlich alle Probleme lösen, die wir wollen.
+            </p>
+          </div>
+        </article>
+
+        {/* Why */}
+        <article className="mb-20">
+          <h2 className="text-amber text-3xl md:text-5xl mb-7">
+            Warum ich das mache
+          </h2>
+          <div className="text-white text-lg md:text-2xl space-y-6 max-w-4xl">
+            <p>
+              In meinem Leben war oft Chaos. Deshalb ist für mich so eine Situation
+              nicht so ungewohnt wie für manch anderen.
+            </p>
+            <p>
+              Ich hoffe, mit diesem Playbook der Welt helfen zu können —
+              in eine bessere und menschenwerteorientierte Zukunft zu kommen.
+            </p>
+            <p>
+              Das Playbook erzählt meinen Werdegang. Von Grund auf.
+              Von der ersten Sekunde der Planung, von der Idee bis zum fertigen Produkt.
+            </p>
+          </div>
+        </article>
+
+        {/* Origin - IGO Ultra */}
+        <article className="mb-20">
+          <h2 className="text-amber text-3xl md:text-5xl mb-7">
+            Der Ursprung
+          </h2>
+          <div className="text-white text-lg md:text-2xl space-y-6 max-w-4xl">
+            <p>
+              New World kommt aus dem Universum von{' '}
+              <a
+                href="https://igoultra.de"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-cyan hover:text-amber transition-colors"
+              >
+                IGOULTRA
+              </a>
+              .
+            </p>
+            <p>
+              IGOULTRA ist ein hybrides Trainings- und Lernsystem. Vier Pfade:
+              Körper, Verstand, Geist, Spielwelt. Du sammelst XP im echten Leben
+              und levelst dein digitales Alter Ego.
+            </p>
+            <p>
+              New World ist ein eigener Geschichtszweig daraus —
+              geboren aus dem <span className="text-cyan">UltraMind</span>-Pfad.
+              Der Coding-Weg. Das Playbook für die KI-Ära.
+            </p>
+          </div>
+        </article>
+
+        {/* The Form */}
+        <article className="mb-20">
+          <h2 className="text-amber text-3xl md:text-5xl mb-7">
+            Die Form
+          </h2>
+          <div className="text-white text-lg md:text-2xl space-y-6 max-w-4xl">
+            <p>
+              Ein Kunstprojekt. Weltraumpiraten, die durch den Weltraum reisen.
+              Mehrere Welten. Abenteuer.
+            </p>
+            <p>
+              Die Konzepte werden unterschwellig vermittelt. Du erlebst sie,
+              bevor du sie verstehst. Die Analogie kommt danach — und dann sitzt es.
+            </p>
+            <p>
+              Ich glaube, das ist die beste Form, die es gibt.
+            </p>
+          </div>
+        </article>
+
+        {/* V0 */}
+        <article className="mb-20 border-l-4 border-amber pl-8">
+          <h2 className="text-amber text-3xl md:text-5xl mb-7">
+            V0
+          </h2>
+          <div className="text-white text-lg md:text-2xl space-y-6 max-w-4xl">
+            <p>
+              Das hier ist Version 0. Der erste Prototyp.
+            </p>
+            <p>
+              Es sind keine Dogmen, die hier drin stehen. Es sind auch keine Regeln.
+              Es ist ein Playbook.
+            </p>
+            <p>
+              Wenn du Fußball spielen gehst oder in einen Kampf gehst,
+              dann hast du sowas für dich gebaut. Wie meistere ich diese Situation am besten?
+            </p>
+            <p>
+              Oft erfordert die Situation, weil sie dynamisch ist, dass sich das Playbook ändert.
+              Und das ist okay. Deswegen ist das hier V0. Es werden weitere folgen.
+            </p>
+          </div>
+        </article>
+
+        {/* Mitstreiter */}
+        <article className="mb-20">
+          <h2 className="text-amber text-3xl md:text-5xl mb-7">
+            Mitstreiter gesucht
+          </h2>
+          <div className="text-white text-lg md:text-2xl space-y-6 max-w-4xl">
+            <p>
+              Ich baue das nicht alleine. Oder besser: Ich will das nicht alleine bauen.
+            </p>
+            <p>
+              Wenn du Teil dieser Reise sein willst — melde dich.
+            </p>
+            <div className="mt-10 flex flex-wrap gap-4">
+              <a
+                href="https://github.com/nelsonanane"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-white text-black px-8 py-4 text-lg font-round-bold hover:bg-cyan transition-colors"
+              >
+                GitHub
+              </a>
+              <a
+                href="https://x.com/nelsonanane_"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block border border-white text-white px-8 py-4 text-lg hover:bg-white/10 transition-colors"
+              >
+                X
+              </a>
+            </div>
+          </div>
+        </article>
+
+        {/* Back to Playbook */}
+        <div className="mt-32 pt-10 border-t border-white/20">
+          <Link
+            to="/"
+            className="text-cyan text-xl md:text-2xl hover:text-amber transition-colors"
+          >
+            &larr; Zurück zum Playbook
+          </Link>
+        </div>
+      </section>
+    </main>
+  )
+}
+
+export default AboutPage
