@@ -48,8 +48,8 @@ const Footer = () => {
               <a href="https://github.com/ThePyth0nKid" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-cyan transition-colors">
                 GitHub
               </a>
-              <a href="https://x.com/nelsonanane_" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-cyan transition-colors">
-                X
+              <a href="https://www.linkedin.com/in/nelson-mehlis-2aa216278/" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-cyan transition-colors">
+                LinkedIn
               </a>
             </div>
           </div>

@@ -153,12 +153,12 @@ const NavBar = () => {
                 GitHub
               </a>
               <a
-                href="https://x.com/nelsonanane_"
+                href="https://www.linkedin.com/in/nelson-mehlis-2aa216278/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white/50 hover:text-cyan transition-colors text-sm"
               >
-                X
+                LinkedIn
               </a>
               <a
                 href="https://igoultra.de"

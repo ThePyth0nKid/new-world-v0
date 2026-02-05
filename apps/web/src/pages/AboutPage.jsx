@@ -282,12 +282,12 @@ const AboutPage = () => {
                 GitHub
               </a>
               <a
-                href="https://x.com/nelsonanane_"
+                href="https://www.linkedin.com/in/nelson-mehlis-2aa216278/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block border border-white text-white px-8 py-4 text-lg hover:bg-white/10 transition-colors"
               >
-                X
+                LinkedIn
               </a>
             </div>
           </div>

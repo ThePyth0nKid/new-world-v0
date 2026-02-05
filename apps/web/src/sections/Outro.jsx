@@ -46,9 +46,8 @@ const Outro = () => {
         </div>
 
         <div className="flex-center gap-8 mt-8">
-          <span className="text-white/40 text-sm tracking-wider">GitHub</span>
-          <span className="text-white/40 text-sm tracking-wider">YouTube</span>
-          <span className="text-white/40 text-sm tracking-wider">X</span>
+          <a href="https://github.com/ThePyth0nKid" target="_blank" rel="noopener noreferrer" className="text-white/40 text-sm tracking-wider hover:text-cyan transition-colors">GitHub</a>
+          <a href="https://www.linkedin.com/in/nelson-mehlis-2aa216278/" target="_blank" rel="noopener noreferrer" className="text-white/40 text-sm tracking-wider hover:text-cyan transition-colors">LinkedIn</a>
         </div>
 
         <p className="text-white/20 text-xs mt-4">&copy; 2026 Nelson Mehlis &middot; Crafted with Claude</p>
