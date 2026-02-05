@@ -4,6 +4,7 @@ import { useRef } from "react";
 
 import { useMaskSettings } from '../../constants';
 import { asset } from '../../constants/config';
+import { setupScrollVideo } from '../utils/video';
 import ComingSoon from "./ComingSoon"
 
 const Hero = () => {
@@ -44,10 +45,7 @@ const Hero = () => {
       } }, '<')
       .to('.entrance-message', { duration: 1, ease: 'power1.inOut', maskImage: 'radial-gradient(circle at 50% 0vh, black 50%, transparent 100%)' }, '<')
 
-    video.onloadedmetadata = () => {
-      video.pause();
-      tl.to(video, { currentTime: video.duration, duration: 3, ease: 'power1.inOut' }, 0);
-    }
+    setupScrollVideo(video, tl, 0);
   });
 
   return (
@@ -60,7 +58,6 @@ const Hero = () => {
           playsInline
           preload="auto"
           className="scale-out"
-          onPlay={(e) => e.target.pause()}
         />
         <div className="title-logo-text fade-out text-center">
           <h1 className="gradient-title">New World</h1>

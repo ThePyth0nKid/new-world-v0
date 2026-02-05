@@ -2,6 +2,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 import { asset } from '../../constants/config';
+import { setupScrollVideo } from '../utils/video';
 
 const SecondVideo = () => {
   const videoRef = useRef();
@@ -21,9 +22,7 @@ const SecondVideo = () => {
 
     tl.to('.kid', { opacity: 1, duration: 1, ease: 'power1.inOut' })
 
-    videoRef.current.onloadedmetadata = () => {
-      tl.to(videoRef.current, { currentTime: videoRef.current.duration, duration: 3, ease: 'power1.inOut' }, '<')
-    }
+    setupScrollVideo(videoRef.current, tl, '<');
   })
 
   return (
