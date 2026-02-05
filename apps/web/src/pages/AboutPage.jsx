@@ -15,8 +15,11 @@ const AboutPage = () => {
           <h1 className="text-cyan font-long uppercase text-4xl md:text-6xl lg:text-7xl mb-6">
             Sero
           </h1>
-          <p className="text-white text-xl md:text-3xl font-round-bold">
+          <p className="text-white text-xl md:text-3xl font-round-bold mb-6">
             Mein Bruder. Willkommen in der New World.
+          </p>
+          <p className="text-white/40 text-sm uppercase tracking-widest">
+            — KIDDO
           </p>
         </div>
 
@@ -51,6 +54,24 @@ const AboutPage = () => {
               Aber genau deshalb entsteht etwas Neues: <span className="text-cyan">Co-Intelligenz</span>.
               Die Zusammenarbeit zwischen Mensch und Maschine.
               Neue Spieler auf dem Spielfeld.
+            </p>
+          </div>
+        </article>
+
+        {/* Danke */}
+        <article className="mb-20 border-l-4 border-cyan/50 pl-8">
+          <h2 className="text-cyan text-3xl md:text-5xl mb-7">
+            Danke, Sero
+          </h2>
+          <div className="text-white text-lg md:text-2xl space-y-6 max-w-4xl">
+            <p>
+              Danke, dass du nie aufgehört hast, mich zu fragen,
+              ob ich dir das alles irgendwie beibringen kann.
+            </p>
+            <p>
+              Deine Hartnäckigkeit hat mich dazu gebracht,
+              einen Weg zu finden, es dir zu zeigen.
+              Das hier ist dieser Weg.
             </p>
           </div>
         </article>
