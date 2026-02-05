@@ -7,14 +7,17 @@ import Kid from '../sections/Kid';
 import PostCard from '../sections/PostCard';
 import Final from '../sections/Final';
 import Outro from '../sections/Outro';
+import Preloader from '../components/Preloader';
 import { useScrollSound } from '../hooks/useScrollSound';
 
 const HomePage = () => {
   // Scroll-triggered intro sound (16 Sekunden)
-  useScrollSound();
+  const { isLoaded } = useScrollSound();
 
   return (
-    <main>
+    <>
+      <Preloader isLoaded={isLoaded} />
+      <main>
       <NavBar />
       <Hero />
 
@@ -28,6 +31,7 @@ const HomePage = () => {
       <Final />
       <Outro />
     </main>
+    </>
   )
 }
 

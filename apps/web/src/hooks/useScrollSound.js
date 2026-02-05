@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { asset } from '../../constants/config'
 
 const SOUND_DURATION = 16 // Sekunden
@@ -37,6 +37,7 @@ const STOP_FADE_TIME = 0.4 // 400ms langsamer Fade-out beim Stoppen
  * Überlappende Grains mit Crossfade für smoothen Sound
  */
 export function useScrollSound() {
+  const [isLoaded, setIsLoaded] = useState(false)
   const ctxRef = useRef(null)
   const forwardBufferRef = useRef(null)
   const reverseBufferRef = useRef(null)
@@ -121,7 +122,7 @@ export function useScrollSound() {
         if (mounted) {
           forwardBufferRef.current = audioBuffer
           reverseBufferRef.current = createReversedBuffer(ctx, audioBuffer)
-          console.log('Audio loaded:', audioBuffer.duration + 's', audioBuffer.numberOfChannels + 'ch')
+          setIsLoaded(true)
         }
       } catch (e) {
         console.error('Audio init error:', e)
@@ -275,4 +276,6 @@ export function useScrollSound() {
       }
     }
   }, [])
+
+  return { isLoaded }
 }
