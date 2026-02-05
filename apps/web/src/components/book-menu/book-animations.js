@@ -30,15 +30,25 @@ export function animateCoverEntrance(backdropEl, coverEl) {
   return tl
 }
 
-export function animateBookOpen(coverEl, firstPageEl) {
+export function animateBookOpen(coverEl, firstPageEl, { bookEl, isSpread } = {}) {
   const tl = gsap.timeline()
+
+  // In spread mode: expand the book from right-half to full width
+  if (isSpread && bookEl) {
+    tl.to(bookEl, {
+      width: '100%',
+      marginLeft: '0%',
+      duration: BOOK_TIMING.bookExpand,
+      ease: BOOK_EASING.bookOpen,
+    }, 0)
+  }
 
   tl.to(coverEl, {
     rotateY: -180,
     duration: BOOK_TIMING.bookOpen,
     ease: BOOK_EASING.bookOpen,
     transformOrigin: 'left center',
-  })
+  }, 0)
 
   tl.fromTo(
     firstPageEl,
@@ -86,8 +96,54 @@ export function animatePageFlip(currentPageEl, nextPageEl, direction) {
   return tl
 }
 
-export function animateClose(bookEl, backdropEl) {
+export function animateSpreadFlip(currentSpreadEl, nextSpreadEl, direction) {
+  const isForward = direction === 'forward'
   const tl = gsap.timeline()
+
+  // Spread flips from the center spine (like a real book)
+  tl.to(currentSpreadEl, {
+    rotateY: isForward ? -90 : 90,
+    opacity: 0.5,
+    scale: 0.98,
+    duration: BOOK_TIMING.pageFlipHalf,
+    ease: BOOK_EASING.pageFlipIn,
+    transformOrigin: 'center center',
+  })
+
+  // Swap at midpoint
+  tl.set(currentSpreadEl, { visibility: 'hidden' })
+  tl.set(nextSpreadEl, {
+    visibility: 'visible',
+    rotateY: isForward ? 90 : -90,
+    opacity: 0.5,
+    scale: 0.98,
+  })
+
+  // New spread flips in from center
+  tl.to(nextSpreadEl, {
+    rotateY: 0,
+    opacity: 1,
+    scale: 1,
+    duration: BOOK_TIMING.pageFlipHalf,
+    ease: BOOK_EASING.pageFlipOut,
+    transformOrigin: 'center center',
+  })
+
+  return tl
+}
+
+export function animateClose(bookEl, backdropEl, { isSpread } = {}) {
+  const tl = gsap.timeline()
+
+  // In spread mode: collapse book back to right-half first
+  if (isSpread) {
+    tl.to(bookEl, {
+      width: '50%',
+      marginLeft: '50%',
+      duration: 0.2,
+      ease: 'power2.in',
+    })
+  }
 
   tl.to(bookEl, {
     scale: 0.85,

@@ -36,7 +36,7 @@ const BookCover = ({ onOpen }) => {
           textShadow: '0 0 20px rgba(179, 245, 255, 0.2)',
         }}
       >
-        Neue Welt
+        New World
       </h2>
       <p className="text-white/30 font-round-bold text-xs uppercase tracking-[0.2em]">
         Playbook V0

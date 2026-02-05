@@ -326,7 +326,16 @@ main {
   perspective: 1200px;
 }
 
+.book-container--spread {
+  perspective: 1600px;
+}
+
 .book-page {
+  transform-style: preserve-3d;
+  will-change: transform, opacity;
+}
+
+.book-spread {
   transform-style: preserve-3d;
   will-change: transform, opacity;
 }

@@ -4,10 +4,27 @@ export const BOOK_DIMENSIONS = {
   maxHeight: '80vh',
 }
 
+export const SPREAD_DIMENSIONS = {
+  width: 'clamp(560px, 85vw, 840px)',
+  aspectRatio: '3 / 2',
+  maxHeight: '85vh',
+}
+
+export const SPREAD_BREAKPOINT = 768
+
+export const SPREAD_DEFS = [
+  { left: 0, right: 1 },  // NavPage + VersionPage
+  { left: 2, right: 3 },  // CrewPage + RoadmapPage
+  { left: null, right: 4 }, // EmptyPage + BackCover
+]
+
+export const TOTAL_SPREADS = SPREAD_DEFS.length
+
 export const BOOK_TIMING = {
   coverEntrance: 0.5,
   coverEntranceBackdrop: 0.3,
   bookOpen: 0.7,
+  bookExpand: 0.6,
   pageFlipHalf: 0.25,
   close: 0.3,
   closeBackdrop: 0.2,

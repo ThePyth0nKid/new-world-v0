@@ -1,5 +1,11 @@
 export const VERSION_LOG = [
   {
+    version: 'V0.013',
+    date: '2026-02-05',
+    title: 'Book Spread',
+    changes: ['Doppelseiten-Layout auf Desktop', 'Spread-Flip vom Buchrücken'],
+  },
+  {
     version: 'V0.012',
     date: '2026-02-05',
     title: 'Mobile Video Fix',
