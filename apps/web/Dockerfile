@@ -1,7 +1,15 @@
 FROM node:20-alpine AS build
 WORKDIR /app
-COPY package.json package-lock.json* ./
+
+# Add libc compatibility for native modules
+RUN apk add --no-cache libc6-compat
+
+# Copy package.json only (no lock file to avoid platform mismatch)
+COPY package.json ./
+
+# Clean install for Alpine Linux
 RUN npm install
+
 COPY . .
 RUN npm run build
 
