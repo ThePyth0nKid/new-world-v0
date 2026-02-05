@@ -126,7 +126,7 @@ const NavBar = () => {
             </p>
             <div className="flex gap-5 pl-2">
               <a
-                href="https://github.com/nelsonanane"
+                href="https://github.com/ThePyth0nKid"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white/50 hover:text-cyan transition-colors text-sm"

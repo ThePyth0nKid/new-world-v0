@@ -210,7 +210,7 @@ const AboutPage = () => {
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
               <a
-                href="https://github.com/nelsonanane"
+                href="https://github.com/ThePyth0nKid"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block bg-white text-black px-8 py-4 text-lg font-round-bold hover:bg-cyan transition-colors"
