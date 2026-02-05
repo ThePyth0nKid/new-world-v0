@@ -113,8 +113,8 @@ export function useScrollSound() {
         convolver.connect(wetGain)
         wetGain.connect(ctx.destination)
 
-        // Cache-Buster um gecachte Version ohne CORS-Header zu umgehen
-        const response = await fetch(asset('/audio/intro-scroll.mp3') + '?v=2')
+        // Cache-Buster für neue 16s komprimierte Version (251KB statt 3.9MB)
+        const response = await fetch(asset('/audio/intro-scroll.mp3') + '?v=3')
         const arrayBuffer = await response.arrayBuffer()
         const audioBuffer = await ctx.decodeAudioData(arrayBuffer)
 
