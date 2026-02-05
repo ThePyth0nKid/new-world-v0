@@ -65,6 +65,9 @@ export const ASSET_REGISTRY = {
       '/images/io-3.png',      // 1.5MB
       '/images/overlay.webp',  // 156KB
     ],
+    audio: [
+      '/audio/intro-scroll.mp3',  // Scroll-triggered intro sound (16s)
+    ],
   },
 
   // ===== Lokal (/public, direkter Pfad) =====

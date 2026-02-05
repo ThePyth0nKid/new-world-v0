@@ -7,8 +7,12 @@ import Kid from '../sections/Kid';
 import PostCard from '../sections/PostCard';
 import Final from '../sections/Final';
 import Outro from '../sections/Outro';
+import { useScrollSound } from '../hooks/useScrollSound';
 
 const HomePage = () => {
+  // Scroll-triggered intro sound (16 Sekunden)
+  useScrollSound();
+
   return (
     <main>
       <NavBar />
