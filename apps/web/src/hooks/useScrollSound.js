@@ -121,6 +121,7 @@ export function useScrollSound() {
         if (mounted) {
           forwardBufferRef.current = audioBuffer
           reverseBufferRef.current = createReversedBuffer(ctx, audioBuffer)
+          console.log('Audio loaded:', audioBuffer.duration + 's', audioBuffer.numberOfChannels + 'ch')
         }
       } catch (e) {
         console.error('Audio init error:', e)
@@ -129,14 +130,23 @@ export function useScrollSound() {
 
     // Grain mit Fade abspielen - durch Reverb geroutet
     // stream: 'A' oder 'B' für Dual-Layer
-    const playGrain = (position, isReverse, stream = 'A') => {
+    const playGrain = async (position, isReverse, stream = 'A') => {
       const ctx = ctxRef.current
       const buffer = isReverse ? reverseBufferRef.current : forwardBufferRef.current
       const dryGain = dryGainRef.current
       const reverb = reverbRef.current
 
       if (!ctx || !buffer || !dryGain || !reverb) return
-      if (ctx.state === 'suspended') ctx.resume()
+
+      // AudioContext muss "running" sein - await resume()
+      if (ctx.state === 'suspended') {
+        try {
+          await ctx.resume()
+        } catch (e) {
+          console.error('AudioContext resume failed:', e)
+          return
+        }
+      }
 
       // Parameter je nach Stream und Richtung
       const isStreamA = stream === 'A'
