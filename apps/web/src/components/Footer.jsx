@@ -25,7 +25,7 @@ const Footer = () => {
             <h4 className="text-white/30 text-xs uppercase tracking-wider mb-4">Projekte</h4>
             <div className="flex flex-col gap-2">
               <a href="https://civ.newworld.systems/" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-cyan transition-colors">
-                Agents Civilization
+                Agent Civilization
               </a>
               <a href="https://www.igoultra.de/" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-cyan transition-colors">
                 IGOULTRA
