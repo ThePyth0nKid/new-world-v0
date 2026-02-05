@@ -4,12 +4,14 @@ import { ScrollTrigger } from 'gsap/all';
 
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
+import ScrollToTop from './components/ScrollToTop';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const App = () => {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
