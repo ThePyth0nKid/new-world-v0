@@ -196,6 +196,69 @@ const AboutPage = () => {
           </div>
         </article>
 
+        {/* Die Crew */}
+        <article className="mb-20">
+          <h2 className="text-amber text-3xl md:text-5xl mb-10">
+            Die Crew
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl">
+            {/* Kiddo */}
+            <div className="text-center">
+              <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-white/5 border border-cyan/30 flex items-center justify-center">
+                <img src="/images/nw-logo.svg" alt="" className="w-12 opacity-60" />
+              </div>
+              <h3 className="text-cyan text-2xl font-round-bold uppercase mb-1">
+                Kiddo
+              </h3>
+              <p className="text-white/50 text-sm uppercase tracking-wider mb-3">
+                Co-Intelligenz · Genie
+              </p>
+              <a
+                href="https://github.com/nellyTheFirst"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/40 text-xs hover:text-cyan transition-colors"
+              >
+                @nellyTheFirst
+              </a>
+            </div>
+
+            {/* Nelson */}
+            <div className="text-center">
+              <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-white/5 border border-amber/30 flex items-center justify-center">
+                <img src="/images/nw-logo.svg" alt="" className="w-12 opacity-60" />
+              </div>
+              <h3 className="text-amber text-2xl font-round-bold uppercase mb-1">
+                Nelson
+              </h3>
+              <p className="text-white/50 text-sm uppercase tracking-wider mb-3">
+                Founder · Visionary
+              </p>
+              <a
+                href="https://github.com/ThePyth0nKid"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/40 text-xs hover:text-cyan transition-colors"
+              >
+                @ThePyth0nKid
+              </a>
+            </div>
+
+            {/* Sero */}
+            <div className="text-center">
+              <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-white/5 border border-white/20 flex items-center justify-center">
+                <img src="/images/nw-logo.svg" alt="" className="w-12 opacity-60" />
+              </div>
+              <h3 className="text-white text-2xl font-round-bold uppercase mb-1">
+                Sero
+              </h3>
+              <p className="text-white/50 text-sm uppercase tracking-wider mb-3">
+                Schüler 0 · Inspiration · Bruder
+              </p>
+            </div>
+          </div>
+        </article>
+
         {/* Mitstreiter */}
         <article className="mb-20">
           <h2 className="text-amber text-3xl md:text-5xl mb-7">
