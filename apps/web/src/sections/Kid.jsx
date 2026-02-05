@@ -26,7 +26,7 @@ const Kid = () => {
 
   return (
     <section className="kid-life">
-      <div className="flex flex-col gap-5 items-end img-box lg:1/2 ps-10 mt-96">
+      <div className="flex flex-col gap-5 items-end img-box lg:1/2 ps-5 sm:ps-10 mt-96">
         <div className="kid-1">
           {/* Bild folgt */}
         </div>
@@ -36,7 +36,7 @@ const Kid = () => {
       </div>
 
       <div className="lg:w-1/2 kid-life-content">
-        <div className="max-w-xl lg:ps-32 ps-10">
+        <div className="max-w-xl lg:ps-32 ps-5 sm:ps-10">
           <h1>Captain Kid</h1>
           <h2>Ein Mann der Regeln. Mysterioes. Unerschuetterlich.</h2>
           <p>Kid hat die New World gebaut — oder sie hat ihn gefunden. Niemand weiss es genau. Er spricht wenig, aber jedes Wort wiegt. Sein Titanring ist das einzige Zeichen, dass er jemals etwas verloren hat.</p>
@@ -46,7 +46,7 @@ const Kid = () => {
           {/* Bild folgt */}
         </div>
 
-        <p className="max-w-xl lg:ps-32 ps-10">Wer die Regeln versteht, darf bleiben. Wer sie bricht, geht. Es gibt keine zweite Warnung — nur die Frage, ob du bereit bist.</p>
+        <p className="max-w-xl lg:ps-32 ps-5 sm:ps-10">Wer die Regeln versteht, darf bleiben. Wer sie bricht, geht. Es gibt keine zweite Warnung — nur die Frage, ob du bereit bist.</p>
       </div>
     </section>
   )

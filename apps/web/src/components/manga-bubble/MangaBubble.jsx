@@ -58,7 +58,7 @@ const MangaBubble = ({
   return (
     <div
       ref={containerRef}
-      className="manga-bubble hidden sm:block"
+      className="manga-bubble"
       style={{
         ...positionStyles,
         width: `${width}%`,

@@ -67,7 +67,9 @@ main {
     @apply fixed top-0 left-0 w-full flex justify-between items-center md:p-16 p-5 z-[100];
   }
   .gradient-title {
-    @apply md:text-[8rem] text-[5rem] font-round-bold !font-extrabold uppercase md:leading-[7rem] leading-[4.5rem] text-center bg-gradient-to-r from-slate-300 via-white to-slate-400 bg-clip-text text-transparent;
+    @apply font-round-bold !font-extrabold uppercase text-center bg-gradient-to-r from-slate-300 via-white to-slate-400 bg-clip-text text-transparent;
+    font-size: clamp(2.8rem, 16vw, 8rem);
+    line-height: 0.9;
   }
   .hero-section {
     @apply w-dvw h-dvh relative overflow-hidden;
@@ -117,7 +119,7 @@ main {
     }
   }
   .io {
-    @apply relative z-10 lg:ps-40 2xl:ps-80 ps-10 py-40 mt-60 flex lg:flex-row flex-col justify-between gap-5 w-dvw overflow-x-hidden;
+    @apply relative z-10 ps-5 sm:ps-10 md:ps-20 lg:ps-40 2xl:ps-80 py-40 mt-60 flex lg:flex-row flex-col justify-between gap-5 w-dvw overflow-x-hidden;
 
     h1 {
       @apply text-cyan font-long uppercase text-8xl mb-20;
@@ -129,14 +131,14 @@ main {
       @apply text-white md:text-2xl text-lg md:pe-28 pe-14;
     }
     .io-1 {
-      @apply bg-cyan lg:h-[80vh] w-auto -translate-x-5;
+      @apply bg-cyan h-[50vh] lg:h-[80vh] w-auto -translate-x-5;
 
       img {
         @apply size-full object-cover [object-position:5%_center] hover:scale-[0.98] transition duration-700 ease-in-out;
       }
     }
     .io-2 {
-      @apply bg-cyan h-[90vh] w-auto md:mt-36 mt-20 -translate-x-5;
+      @apply bg-cyan h-[60vh] lg:h-[90vh] w-auto md:mt-36 mt-20 -translate-x-5;
 
       img {
         @apply size-full object-cover [object-position:80%_center] hover:scale-x-[0.97] hover:scale-y-[0.98] transition duration-700 ease-in-out;
@@ -166,17 +168,17 @@ main {
       @apply text-white md:text-2xl text-lg md:pe-28 pe-14;
     }
     p:last-of-type {
-      @apply md:hidden block xl:block;
+      @apply block;
     }
     .kid-1 {
-      @apply bg-cyan lg:h-[80vh] w-auto -translate-x-5;
+      @apply bg-cyan h-[50vh] lg:h-[80vh] w-auto -translate-x-5;
 
       img {
         @apply size-full object-cover [object-position:85%_center] hover:scale-[0.98] transition duration-700 ease-in-out;
       }
     }
     .kid-2 {
-      @apply bg-cyan lg:h-[60vh] lg:w-[70%] w-[80%] md:my-36 my-20 lg:-translate-x-5 translate-x-5;
+      @apply bg-cyan h-[40vh] lg:h-[60vh] lg:w-[70%] w-[80%] md:my-36 my-20 lg:-translate-x-5 translate-x-5;
 
       img {
         @apply size-full object-cover [object-position:50%_center] hover:scale-x-[0.98] hover:scale-y-[0.98] transition duration-700 ease-in-out;
@@ -209,7 +211,7 @@ main {
       }
 
       button {
-        @apply rounded-full bg-white absolute left-1/2 -translate-x-1/2 md:bottom-16 -bottom-28 md:w-fit w-2/3 px-5 md:px-7 py-4 text-lg;
+        @apply rounded-full bg-white absolute left-1/2 -translate-x-1/2 md:bottom-16 bottom-4 md:w-fit w-2/3 px-5 md:px-7 py-4 text-lg;
       }
     }
   }
@@ -287,6 +289,15 @@ main {
   z-index: 10;
   pointer-events: none;
   aspect-ratio: 4 / 3;
+}
+
+/* Mobile-optimized manga bubbles */
+@media (max-width: 640px) {
+  .manga-bubble {
+    width: 45% !important;
+    min-width: 100px;
+    max-width: 160px;
+  }
 }
 
 .manga-bubble-svg {
