@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import NavBar from '../sections/NavBar';
+import Footer from '../components/Footer';
 
 const AboutPage = () => {
   return (
@@ -121,7 +122,7 @@ const AboutPage = () => {
           </div>
         </article>
 
-        {/* Origin - IGO Ultra */}
+        {/* Origin - IGOULTRA */}
         <article className="mb-20">
           <h2 className="text-amber text-3xl md:text-5xl mb-7">
             Der Ursprung
@@ -292,16 +293,9 @@ const AboutPage = () => {
           </div>
         </article>
 
-        {/* Back to Playbook */}
-        <div className="mt-32 pt-10 border-t border-white/20">
-          <Link
-            to="/"
-            className="text-cyan text-xl md:text-2xl hover:text-amber transition-colors"
-          >
-            &larr; Zurück zum Playbook
-          </Link>
-        </div>
-      </section>
+        </section>
+
+      <Footer />
     </main>
   )
 }

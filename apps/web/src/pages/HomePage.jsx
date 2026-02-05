@@ -7,6 +7,7 @@ import Kid from '../sections/Kid';
 import PostCard from '../sections/PostCard';
 import Final from '../sections/Final';
 import Outro from '../sections/Outro';
+import Footer from '../components/Footer';
 import Preloader from '../components/Preloader';
 import { useScrollSound } from '../hooks/useScrollSound';
 
@@ -30,6 +31,7 @@ const HomePage = () => {
       <PostCard />
       <Final />
       <Outro />
+      <Footer />
     </main>
     </>
   )

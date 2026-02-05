@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import ContactForm from '../components/ContactForm'
+import Footer from '../components/Footer'
 
 const JoinCTA = () => {
   return (
@@ -31,16 +32,9 @@ const JoinCTA = () => {
           </a>
         </div>
 
-        {/* Back to Playbook */}
-        <div className="mt-20 pt-10 border-t border-white/20 text-center">
-          <Link
-            to="/"
-            className="text-cyan text-xl md:text-2xl hover:text-amber transition-colors"
-          >
-            &larr; Zurück zum Playbook
-          </Link>
         </div>
-      </div>
+
+      <Footer />
     </section>
   )
 }
