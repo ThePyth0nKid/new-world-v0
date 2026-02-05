@@ -1,6 +1,7 @@
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
+import { asset } from '../../constants/config';
 
 const SecondVideo = () => {
   const videoRef = useRef();
@@ -33,7 +34,7 @@ const SecondVideo = () => {
           muted
           playsInline
           preload="auto"
-          src="/videos/output2.mp4"
+          src={asset('/videos/output2.mp4')}
           className="size-full object-cover second-vd"
           style={{ objectPosition: 'center top' }}
         />

@@ -1,6 +1,8 @@
 services:
   web:
-    build: ./apps/web
+    build:
+      context: ./apps/web
+      dockerfile: Dockerfile.dev
     ports:
       - "3050:3050"
     volumes:

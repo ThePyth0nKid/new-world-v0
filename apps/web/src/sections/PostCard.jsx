@@ -1,6 +1,7 @@
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react"
+import { asset } from '../../constants/config';
 
 const PostCard = () => {
   const videoRef = useRef(null);
@@ -25,7 +26,7 @@ const PostCard = () => {
       <div className="animated-gradient-bg" />
 
       <div className="post-card-wrapper group hover:rotate-1 hover:-[1.02] transition duration-700">
-        <img src="/images/overlay.webp" />
+        <img src={asset('/images/overlay.webp')} />
 
         <video
           ref={videoRef}
@@ -33,7 +34,7 @@ const PostCard = () => {
           playsInline
           autoPlay
           preload="auto"
-          src="/videos/postcard-vd.mp4"
+          src={asset('/videos/postcard-vd.mp4')}
         />
 
         <button className="group-hover:bg-cyan transation duration-700">

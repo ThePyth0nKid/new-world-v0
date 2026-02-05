@@ -1,6 +1,7 @@
 import gsap from "gsap"
 import { useGSAP } from "@gsap/react"
 import { MangaBubble } from "../components/manga-bubble"
+import { asset } from '../../constants/config';
 
 const Io = () => {
   useGSAP(() => {
@@ -33,7 +34,7 @@ const Io = () => {
         <p>Io wuchs auf den dystopischen Haefen auf — zwischen Schmugglern, Schiebern und der Dunkelheit von Station zu Station. Ein alter Kugelschreiber ist alles, was ihm geblieben ist. Vielleicht ist es Zeit fuer etwas Neues.</p>
 
         <div className="io-2 relative">
-          <img src="/images/io-2.png" />
+          <img src={asset('/images/io-2.png')} />
           <MangaBubble
             text="Wohin jetzt...?"
             type="thought"
@@ -48,7 +49,7 @@ const Io = () => {
 
       <div className="space-y-5 mt-96 img-box">
         <div className="io-1 relative">
-          <img src="/images/io-1.png" />
+          <img src={asset('/images/io-1.png')} />
           <MangaBubble
             text="Ein Neuanfang."
             type="normal"
@@ -60,7 +61,7 @@ const Io = () => {
           />
         </div>
         <div className="io-3 relative">
-          <img src="/images/io-3.png" />
+          <img src={asset('/images/io-3.png')} />
           <MangaBubble
             text="Dieser Ort... er lebt."
             type="narration"

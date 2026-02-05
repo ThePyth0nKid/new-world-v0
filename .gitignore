@@ -42,6 +42,9 @@ production/look-dev/sref-candidates/
 # Claude Code local settings
 .claude/settings.local.json
 
+# Wrangler local state (R2 simulator cache)
+.wrangler/
+
 # Logs
 *.log
 npm-debug.log*

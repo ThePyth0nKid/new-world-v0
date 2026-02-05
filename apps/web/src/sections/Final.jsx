@@ -1,6 +1,7 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { useRef } from "react";
+import { asset } from '../../constants/config';
 
 const Final = () => {
   const videoRef = useRef(null);
@@ -42,7 +43,7 @@ const Final = () => {
           muted
           playsInline
           preload="auto"
-          src="/videos/output3.mp4"
+          src={asset('/videos/output3.mp4')}
           className="size-full object-cover"
         />
       </div>

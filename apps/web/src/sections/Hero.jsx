@@ -3,6 +3,7 @@ import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 
 import { useMaskSettings } from '../../constants';
+import { asset } from '../../constants/config';
 import ComingSoon from "./ComingSoon"
 
 const Hero = () => {
@@ -54,7 +55,7 @@ const Hero = () => {
       <div className="size-full mask-wrapper">
         <video
           ref={videoRef}
-          src="/videos/hero.mp4"
+          src={asset('/videos/hero.mp4')}
           muted
           playsInline
           preload="auto"
