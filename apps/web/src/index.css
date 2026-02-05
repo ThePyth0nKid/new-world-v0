@@ -320,3 +320,13 @@ main {
   line-height: 1.3;
   color: #0d0d0d;
 }
+
+/* Book Menu — 3D page flip */
+.book-container {
+  perspective: 1200px;
+}
+
+.book-page {
+  transform-style: preserve-3d;
+  will-change: transform, opacity;
+}
