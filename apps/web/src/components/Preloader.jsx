@@ -1,18 +1,31 @@
 import { useEffect, useState } from 'react'
 
+const SESSION_KEY = 'nw-entered'
+
 const Preloader = ({ isLoaded, onEnter }) => {
-  const [isVisible, setIsVisible] = useState(true)
+  // Prüfe ob User schon eingetreten ist (in dieser Session)
+  const hasEntered = typeof window !== 'undefined' && sessionStorage.getItem(SESSION_KEY)
+
+  const [isVisible, setIsVisible] = useState(!hasEntered)
   const [isFading, setIsFading] = useState(false)
   const [showEnter, setShowEnter] = useState(false)
 
   useEffect(() => {
+    // Wenn schon eingetreten, Audio direkt aktivieren
+    if (hasEntered) {
+      onEnter?.()
+      return
+    }
+
     if (isLoaded) {
       // Zeige "Enter" Button wenn Audio geladen
       setShowEnter(true)
     }
-  }, [isLoaded])
+  }, [isLoaded, hasEntered, onEnter])
 
   const handleEnter = () => {
+    // Merken dass User eingetreten ist
+    sessionStorage.setItem(SESSION_KEY, 'true')
     // AudioContext aktivieren
     onEnter?.()
     // Fade out starten
