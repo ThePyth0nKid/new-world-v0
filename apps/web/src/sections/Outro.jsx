@@ -30,13 +30,19 @@ const Outro = () => {
           <p className="text-white/40 text-center text-lg md:text-2xl mt-4 tracking-[0.4em] uppercase font-round-bold">Playbook V0</p>
         </div>
 
-        <div className="flex flex-col gap-4 mt-8">
-          <button className="rounded-full bg-white px-8 py-4 text-lg font-round-bold uppercase tracking-wider hover:bg-cyan transition duration-500">
-            Watch the Pilot
-          </button>
-          <button className="rounded-full border border-white/30 px-8 py-4 text-lg text-white uppercase tracking-wider hover:border-amber hover:text-amber transition duration-500">
-            Enter Dashboard
-          </button>
+        <div className="flex flex-col gap-6 mt-8">
+          <div className="text-center">
+            <button className="rounded-full bg-white/20 px-8 py-4 text-lg font-round-bold uppercase tracking-wider text-white/50 cursor-not-allowed">
+              Watch the Pilot
+            </button>
+            <p className="text-cyan/60 text-xs uppercase tracking-widest mt-2">Coming Soon</p>
+          </div>
+          <div className="text-center">
+            <button className="rounded-full border border-white/20 px-8 py-4 text-lg text-white/50 uppercase tracking-wider cursor-not-allowed">
+              Enter Dashboard
+            </button>
+            <p className="text-cyan/60 text-xs uppercase tracking-widest mt-2">Coming Soon</p>
+          </div>
         </div>
 
         <div className="flex-center gap-8 mt-8">
