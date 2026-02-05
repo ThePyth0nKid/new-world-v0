@@ -1,36 +1,46 @@
 import { useEffect, useState } from 'react'
 
-const Preloader = ({ isLoaded }) => {
+const Preloader = ({ isLoaded, onEnter }) => {
   const [isVisible, setIsVisible] = useState(true)
   const [isFading, setIsFading] = useState(false)
+  const [showEnter, setShowEnter] = useState(false)
 
   useEffect(() => {
     if (isLoaded) {
-      // Start fade out
-      setIsFading(true)
-      // Remove from DOM after animation
-      const timer = setTimeout(() => {
-        setIsVisible(false)
-      }, 800)
-      return () => clearTimeout(timer)
+      // Zeige "Enter" Button wenn Audio geladen
+      setShowEnter(true)
     }
   }, [isLoaded])
+
+  const handleEnter = () => {
+    // AudioContext aktivieren
+    onEnter?.()
+    // Fade out starten
+    setIsFading(true)
+    setTimeout(() => {
+      setIsVisible(false)
+    }, 800)
+  }
 
   if (!isVisible) return null
 
   return (
     <div
       className={`preloader ${isFading ? 'preloader-fade-out' : ''}`}
+      onClick={showEnter ? handleEnter : undefined}
       style={{
         position: 'fixed',
         inset: 0,
         zIndex: 9999,
         backgroundColor: '#0d0d0d',
         display: 'flex',
+        flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
+        gap: '40px',
         transition: 'opacity 0.8s ease-out',
         opacity: isFading ? 0 : 1,
+        cursor: showEnter ? 'pointer' : 'default',
       }}
     >
       {/* Neon Glow Logo */}
@@ -42,9 +52,24 @@ const Preloader = ({ isLoaded }) => {
           style={{
             width: '200px',
             height: 'auto',
-            filter: 'drop-shadow(0 0 20px #b3f5ff) drop-shadow(0 0 40px #b3f5ff) drop-shadow(0 0 60px rgba(179, 245, 255, 0.5))',
           }}
         />
+      </div>
+
+      {/* Enter Text */}
+      <div
+        style={{
+          color: '#b3f5ff',
+          fontFamily: 'Round, sans-serif',
+          fontSize: '1.2rem',
+          letterSpacing: '0.3em',
+          textTransform: 'uppercase',
+          opacity: showEnter ? 1 : 0,
+          transition: 'opacity 0.5s ease-in',
+          textShadow: '0 0 10px #b3f5ff, 0 0 20px rgba(179, 245, 255, 0.5)',
+        }}
+      >
+        {showEnter ? 'Click to Enter' : 'Loading...'}
       </div>
 
       {/* CSS Animation */}

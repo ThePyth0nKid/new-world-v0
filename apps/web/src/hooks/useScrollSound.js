@@ -38,6 +38,7 @@ const STOP_FADE_TIME = 0.4 // 400ms langsamer Fade-out beim Stoppen
  */
 export function useScrollSound() {
   const [isLoaded, setIsLoaded] = useState(false)
+  const [isReady, setIsReady] = useState(false) // Nach User-Klick
   const ctxRef = useRef(null)
   const forwardBufferRef = useRef(null)
   const reverseBufferRef = useRef(null)
@@ -277,5 +278,14 @@ export function useScrollSound() {
     }
   }, [])
 
-  return { isLoaded }
+  // User muss klicken um AudioContext zu aktivieren
+  const activate = async () => {
+    const ctx = ctxRef.current
+    if (ctx && ctx.state === 'suspended') {
+      await ctx.resume()
+    }
+    setIsReady(true)
+  }
+
+  return { isLoaded, isReady, activate }
 }

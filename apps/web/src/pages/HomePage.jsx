@@ -12,11 +12,11 @@ import { useScrollSound } from '../hooks/useScrollSound';
 
 const HomePage = () => {
   // Scroll-triggered intro sound (16 Sekunden)
-  const { isLoaded } = useScrollSound();
+  const { isLoaded, activate } = useScrollSound();
 
   return (
     <>
-      <Preloader isLoaded={isLoaded} />
+      <Preloader isLoaded={isLoaded} onEnter={activate} />
       <main>
       <NavBar />
       <Hero />
