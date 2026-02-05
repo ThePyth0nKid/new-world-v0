@@ -116,6 +116,25 @@ const NavBar = () => {
                   </span>
                 </div>
               </Link>
+
+              <Link
+                to="/join"
+                onClick={() => setIsOpen(false)}
+                className={`block p-5 rounded-lg border transition-all duration-200 ${
+                  location.pathname === '/join'
+                    ? 'bg-amber/10 border-amber/30 text-amber'
+                    : 'bg-white/5 border-transparent text-white hover:bg-white/10 hover:border-white/10'
+                }`}
+              >
+                <div className="flex items-center justify-between">
+                  <span className="text-2xl font-round-bold uppercase tracking-wide">
+                    Join
+                  </span>
+                  <span className="text-white/30 text-xs uppercase tracking-wider">
+                    Crew
+                  </span>
+                </div>
+              </Link>
             </div>
           </div>
 
