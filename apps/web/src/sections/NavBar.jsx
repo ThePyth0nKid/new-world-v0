@@ -109,10 +109,10 @@ const NavBar = () => {
               >
                 <div className="flex items-center justify-between">
                   <span className="text-2xl font-round-bold uppercase tracking-wide">
-                    About
+                    Manifest
                   </span>
                   <span className="text-white/30 text-xs uppercase tracking-wider">
-                    Story
+                    Mission
                   </span>
                 </div>
               </Link>
