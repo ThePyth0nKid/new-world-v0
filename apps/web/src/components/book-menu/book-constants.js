@@ -13,9 +13,9 @@ export const SPREAD_DIMENSIONS = {
 export const SPREAD_BREAKPOINT = 768
 
 export const SPREAD_DEFS = [
-  { left: 0, right: 1 },  // NavPage + VersionPage
-  { left: 2, right: 3 },  // CrewPage + RoadmapPage
-  { left: null, right: 4 }, // EmptyPage + BackCover
+  { left: 0, right: 1 },  // AuthPage + NavPage
+  { left: 2, right: 3 },  // VersionPage + CrewPage
+  { left: 4, right: 5 },  // RoadmapPage + BackCover
 ]
 
 export const TOTAL_SPREADS = SPREAD_DEFS.length
@@ -44,9 +44,10 @@ export const SWIPE_CONFIG = {
   maxDuration: 300,
 }
 
-export const TOTAL_PAGES = 5
+export const TOTAL_PAGES = 6
 
 export const PAGE_TITLES = [
+  'Account',
   'Navigation',
   'Versionslog',
   'Die Crew',

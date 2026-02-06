@@ -15,13 +15,14 @@ import { useBookSwipe } from './useBookSwipe'
 import BookCover from './BookCover'
 import BookPage from './BookPage'
 import BookSpread from './BookSpread'
+import AuthPage from './pages/AuthPage'
 import NavPage from './pages/NavPage'
 import VersionPage from './pages/VersionPage'
 import CrewPage from './pages/CrewPage'
 import RoadmapPage from './pages/RoadmapPage'
 import BackCover from './pages/BackCover'
 
-const PAGES = [NavPage, VersionPage, CrewPage, RoadmapPage, BackCover]
+const PAGES = [AuthPage, NavPage, VersionPage, CrewPage, RoadmapPage, BackCover]
 
 function useMediaSpread() {
   const [isSpread, setIsSpread] = useState(
@@ -426,9 +427,9 @@ const BookMenu = ({ isOpen, onClose }) => {
               const LeftComp = leftIdx !== null ? PAGES[leftIdx] : null
               const RightComp = rightIdx !== null ? PAGES[rightIdx] : null
 
-              const leftIsNav = leftIdx === 0
+              const leftIsNav = leftIdx === 1
               const leftIsBack = leftIdx === TOTAL_PAGES - 1
-              const rightIsNav = rightIdx === 0
+              const rightIsNav = rightIdx === 1
               const rightIsBack = rightIdx === TOTAL_PAGES - 1
 
               const leftClose = (leftIsNav || leftIsBack) ? handleClose : undefined
@@ -548,7 +549,7 @@ const BookMenu = ({ isOpen, onClose }) => {
           {/* Pages */}
           {PAGES.map((PageComponent, i) => {
             const pageNum = i + 1
-            const isNavOrBack = pageNum === 1 || pageNum === TOTAL_PAGES
+            const isNavOrBack = pageNum === 2 || pageNum === TOTAL_PAGES
             const closeHandler = isNavOrBack ? handleClose : undefined
 
             return (

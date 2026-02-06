@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { BookMenu } from '../components/book-menu'
-import { AuthModal } from '../components/auth'
 import { useAuth } from '../auth/useAuth'
 
 const AvatarCircle = ({ user }) => {
@@ -25,7 +24,6 @@ const AvatarCircle = ({ user }) => {
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false)
-  const [showAuth, setShowAuth] = useState(false)
   const { user, isAuthenticated, isLoading } = useAuth()
 
   return (
@@ -35,15 +33,6 @@ const NavBar = () => {
       </Link>
 
       <div className="flex items-center gap-3">
-        {!isLoading && !isAuthenticated && (
-          <button
-            onClick={() => setShowAuth(true)}
-            className="text-white/60 text-sm font-round hover:text-white transition-colors"
-          >
-            Anmelden
-          </button>
-        )}
-
         {!isLoading && isAuthenticated && (
           <AvatarCircle user={user} />
         )}
@@ -58,12 +47,6 @@ const NavBar = () => {
       </div>
 
       <BookMenu isOpen={isOpen} onClose={() => setIsOpen(false)} />
-
-      <AuthModal
-        isOpen={showAuth}
-        onClose={() => setShowAuth(false)}
-        onSuccess={() => setShowAuth(false)}
-      />
     </nav>
   )
 }
