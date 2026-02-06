@@ -1,5 +1,6 @@
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
+import { Link } from 'react-router-dom'
 
 const Outro = () => {
   useGSAP(() => {
@@ -38,10 +39,12 @@ const Outro = () => {
             <p className="text-cyan/60 text-xs uppercase tracking-widest mt-2">Coming Soon</p>
           </div>
           <div className="text-center">
-            <button className="rounded-full border border-white/20 px-8 py-4 text-lg text-white/50 uppercase tracking-wider cursor-not-allowed">
-              Enter Dashboard
-            </button>
-            <p className="text-cyan/60 text-xs uppercase tracking-widest mt-2">Coming Soon</p>
+            <Link
+              to="/arrival"
+              className="inline-block rounded-full border border-cyan/40 px-8 py-4 text-lg text-cyan uppercase tracking-wider hover:bg-cyan/10 transition-colors"
+            >
+              Charakter erstellen
+            </Link>
           </div>
         </div>
 

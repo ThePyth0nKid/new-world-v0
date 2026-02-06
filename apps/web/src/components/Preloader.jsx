@@ -1,9 +1,9 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useCallback } from 'react'
 
 const SESSION_KEY = 'nw-entered'
+const AUDIO_TIMEOUT_MS = 4000
 
 const Preloader = ({ isLoaded, onEnter }) => {
-  // Prüfe ob User schon eingetreten ist (in dieser Session)
   const hasEntered = typeof window !== 'undefined' && sessionStorage.getItem(SESSION_KEY)
 
   const [isVisible, setIsVisible] = useState(!hasEntered)
@@ -11,29 +11,48 @@ const Preloader = ({ isLoaded, onEnter }) => {
   const [showEnter, setShowEnter] = useState(false)
 
   useEffect(() => {
-    // Wenn schon eingetreten, Audio direkt aktivieren
     if (hasEntered) {
       onEnter?.()
       return
     }
 
     if (isLoaded) {
-      // Zeige "Enter" Button wenn Audio geladen
       setShowEnter(true)
+      return
     }
+
+    // Fallback: show Enter after timeout even if audio hasn't loaded
+    const timer = setTimeout(() => {
+      setShowEnter(true)
+    }, AUDIO_TIMEOUT_MS)
+
+    return () => clearTimeout(timer)
   }, [isLoaded, hasEntered, onEnter])
 
-  const handleEnter = () => {
-    // Merken dass User eingetreten ist
+  const handleEnter = useCallback(() => {
+    if (!showEnter || isFading) return
     sessionStorage.setItem(SESSION_KEY, 'true')
-    // AudioContext aktivieren
     onEnter?.()
-    // Fade out starten
     setIsFading(true)
     setTimeout(() => {
       setIsVisible(false)
     }, 800)
-  }
+  }, [showEnter, isFading, onEnter])
+
+  // Keyboard: Enter or Space to enter
+  useEffect(() => {
+    if (!showEnter || isFading) return
+
+    const handleKey = (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault()
+        handleEnter()
+      }
+    }
+
+    window.addEventListener('keydown', handleKey)
+    return () => window.removeEventListener('keydown', handleKey)
+  }, [showEnter, isFading, handleEnter])
 
   if (!isVisible) return null
 
@@ -74,15 +93,17 @@ const Preloader = ({ isLoaded, onEnter }) => {
         style={{
           color: '#b3f5ff',
           fontFamily: 'Round, sans-serif',
-          fontSize: '1.2rem',
+          fontSize: showEnter ? '1.2rem' : '0.8rem',
           letterSpacing: '0.3em',
           textTransform: 'uppercase',
-          opacity: showEnter ? 1 : 0,
-          transition: 'opacity 0.5s ease-in',
-          textShadow: '0 0 10px #b3f5ff, 0 0 20px rgba(179, 245, 255, 0.5)',
+          opacity: showEnter ? 1 : 0.4,
+          transition: 'opacity 0.5s ease-in, font-size 0.3s ease',
+          textShadow: showEnter
+            ? '0 0 10px #b3f5ff, 0 0 20px rgba(179, 245, 255, 0.5)'
+            : 'none',
         }}
       >
-        {showEnter ? 'Click to Enter' : 'Loading...'}
+        {showEnter ? 'Press Enter' : 'Loading...'}
       </div>
 
       {/* CSS Animation */}

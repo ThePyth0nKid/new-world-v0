@@ -127,6 +127,7 @@ export function useScrollSound() {
         }
       } catch (e) {
         console.error('Audio init error:', e)
+        if (mounted) setIsLoaded(true)
       }
     }
 

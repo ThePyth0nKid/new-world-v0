@@ -339,3 +339,122 @@ main {
   transform-style: preserve-3d;
   will-change: transform, opacity;
 }
+
+/* ── Arrival ────────────────────────────────────────────────────── */
+
+.arrival-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  padding: 6rem 1.25rem 2rem;
+  max-width: 48rem;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .arrival-container {
+    padding: 8rem 2rem 3rem;
+  }
+}
+
+.arrival-chat {
+  max-height: 60vh;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(179, 245, 255, 0.2) transparent;
+}
+
+.arrival-message {
+  max-width: 80%;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  line-height: 1.5;
+}
+
+.arrival-message--assistant {
+  background: rgba(179, 245, 255, 0.08);
+  border: 1px solid rgba(179, 245, 255, 0.15);
+  color: #e0e0e0;
+}
+
+.arrival-message--user {
+  background: rgba(255, 196, 107, 0.08);
+  border: 1px solid rgba(255, 196, 107, 0.15);
+  color: #e0e0e0;
+}
+
+/* Typing dots */
+.arrival-typing {
+  display: inline-flex;
+  gap: 4px;
+  padding: 4px 0;
+}
+
+.arrival-typing span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #b3f5ff;
+  opacity: 0.4;
+  animation: arrival-blink 1.4s infinite both;
+}
+
+.arrival-typing span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.arrival-typing span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes arrival-blink {
+  0%, 80%, 100% { opacity: 0.4; }
+  40% { opacity: 1; }
+}
+
+/* Portrait grid */
+.arrival-portrait-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  max-width: 32rem;
+  width: 100%;
+}
+
+.arrival-portrait-card {
+  position: relative;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.arrival-portrait-card:hover {
+  border-color: rgba(179, 245, 255, 0.3);
+  transform: scale(1.02);
+}
+
+.arrival-portrait-card--selected {
+  border-color: #b3f5ff;
+  box-shadow: 0 0 20px rgba(179, 245, 255, 0.2);
+}
+
+.arrival-portrait-card--loading {
+  cursor: default;
+}
+
+/* Progress bar */
+.arrival-progress {
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.arrival-progress__fill {
+  height: 100%;
+  background: linear-gradient(90deg, #b3f5ff, #7de8f5);
+  border-radius: 3px;
+  transition: width 0.5s ease-out;
+}

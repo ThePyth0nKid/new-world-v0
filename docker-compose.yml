@@ -10,5 +10,7 @@ services:
       - ./apps/web/public:/app/public
       - ./apps/web/constants:/app/constants
       - ./apps/web/index.html:/app/index.html
+      - ./apps/web/vite.config.js:/app/vite.config.js
+      - ./apps/web/.env.development:/app/.env.development
     environment:
       - NODE_ENV=development

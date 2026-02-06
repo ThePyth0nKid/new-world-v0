@@ -1,21 +1,35 @@
 import { Link, useLocation } from 'react-router-dom'
+import { useAuth } from '../../../auth/useAuth'
 
-const NAV_ITEMS = [
-  { to: '/', label: 'Playbook', subtitle: 'Home', activeColor: 'cyan' },
-  { to: '/about', label: 'Manifest', subtitle: 'Mission', activeColor: 'cyan' },
-  { to: '/join', label: 'Join', subtitle: 'Crew', activeColor: 'amber' },
-]
+const ACTIVE_COLOR_MAP = {
+  cyan: 'bg-cyan/10 border-cyan/30 text-cyan',
+  amber: 'bg-amber/10 border-amber/30 text-amber',
+}
+
+const INACTIVE_CLASSES = 'bg-white/5 border-transparent text-white hover:bg-white/10 hover:border-white/10'
 
 const NavPage = ({ onClose }) => {
   const location = useLocation()
+  const { user, isAuthenticated } = useAuth()
+
+  const hasCharacter = isAuthenticated && user?.nw_character
+
+  const navItems = [
+    { to: '/', label: 'Playbook', subtitle: 'Home', activeColor: 'cyan' },
+    { to: '/about', label: 'Manifest', subtitle: 'Mission', activeColor: 'cyan' },
+    hasCharacter
+      ? { to: '/dashboard', label: 'Dashboard', subtitle: 'Charakter', activeColor: 'cyan' }
+      : { to: '/arrival', label: 'Arrival', subtitle: 'Charakter', activeColor: 'cyan' },
+    { to: '/join', label: 'Join', subtitle: 'Crew', activeColor: 'amber' },
+  ]
 
   return (
     <div className="flex flex-col gap-4 h-full justify-center">
-      {NAV_ITEMS.map(({ to, label, subtitle, activeColor }) => {
+      {navItems.map(({ to, label, subtitle, activeColor }) => {
         const isActive = location.pathname === to
         const activeClasses = isActive
-          ? `bg-${activeColor}/10 border-${activeColor}/30 text-${activeColor}`
-          : 'bg-white/5 border-transparent text-white hover:bg-white/10 hover:border-white/10'
+          ? ACTIVE_COLOR_MAP[activeColor]
+          : INACTIVE_CLASSES
 
         return (
           <Link
