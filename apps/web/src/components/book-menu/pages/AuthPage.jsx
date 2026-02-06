@@ -1,4 +1,5 @@
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect, useRef } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../../../auth/useAuth'
 
 const TAB_LOGIN = 'login'
@@ -8,9 +9,11 @@ const INPUT_CLASS = 'w-full bg-white/5 border border-white/10 rounded-lg px-3 py
 
 const AuthPage = ({ onClose }) => {
   const { user, isAuthenticated, registerUser, loginUser, logout } = useAuth()
+  const navigate = useNavigate()
   const [activeTab, setActiveTab] = useState(TAB_LOGIN)
   const [error, setError] = useState('')
   const [submitting, setSubmitting] = useState(false)
+  const wasAuthRef = useRef(isAuthenticated)
 
   const [loginValue, setLoginValue] = useState('')
   const [loginPassword, setLoginPassword] = useState('')
@@ -19,6 +22,16 @@ const AuthPage = ({ onClose }) => {
   const [regUsername, setRegUsername] = useState('')
   const [regPassword, setRegPassword] = useState('')
   const [regPasswordConfirm, setRegPasswordConfirm] = useState('')
+
+  // After login/register: close book + navigate
+  useEffect(() => {
+    if (!wasAuthRef.current && isAuthenticated && user) {
+      const target = user.nw_character ? '/dashboard' : '/arrival'
+      onClose?.()
+      navigate(target)
+    }
+    wasAuthRef.current = isAuthenticated
+  }, [isAuthenticated, user, navigate, onClose])
 
   const handleLogin = useCallback(async (e) => {
     e.preventDefault()

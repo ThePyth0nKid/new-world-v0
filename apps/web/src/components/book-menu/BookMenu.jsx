@@ -427,13 +427,15 @@ const BookMenu = ({ isOpen, onClose }) => {
               const LeftComp = leftIdx !== null ? PAGES[leftIdx] : null
               const RightComp = rightIdx !== null ? PAGES[rightIdx] : null
 
+              const leftIsAuth = leftIdx === 0
               const leftIsNav = leftIdx === 1
               const leftIsBack = leftIdx === TOTAL_PAGES - 1
+              const rightIsAuth = rightIdx === 0
               const rightIsNav = rightIdx === 1
               const rightIsBack = rightIdx === TOTAL_PAGES - 1
 
-              const leftClose = (leftIsNav || leftIsBack) ? handleClose : undefined
-              const rightClose = (rightIsNav || rightIsBack) ? handleClose : undefined
+              const leftClose = (leftIsAuth || leftIsNav || leftIsBack) ? handleClose : undefined
+              const rightClose = (rightIsAuth || rightIsNav || rightIsBack) ? handleClose : undefined
 
               return (
                 <div
@@ -549,7 +551,7 @@ const BookMenu = ({ isOpen, onClose }) => {
           {/* Pages */}
           {PAGES.map((PageComponent, i) => {
             const pageNum = i + 1
-            const isNavOrBack = pageNum === 2 || pageNum === TOTAL_PAGES
+            const isNavOrBack = pageNum === 1 || pageNum === 2 || pageNum === TOTAL_PAGES
             const closeHandler = isNavOrBack ? handleClose : undefined
 
             return (

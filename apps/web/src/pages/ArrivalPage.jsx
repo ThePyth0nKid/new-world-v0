@@ -1,9 +1,7 @@
-import { useState, useCallback } from 'react'
 import { Navigate } from 'react-router-dom'
 import NavBar from '../sections/NavBar'
 import { useArrival } from '../hooks/useArrival'
 import { useAuth } from '../auth/useAuth'
-import { AuthModal } from '../components/auth'
 import {
   ArrivalInterview,
   ArrivalVision,
@@ -13,50 +11,21 @@ import {
 } from '../components/arrival'
 import LoginPrompt from '../components/arrival/LoginPrompt'
 
-const ArrivalGate = () => {
-  const [showAuth, setShowAuth] = useState(false)
-
-  return (
-    <div className="flex flex-col items-center gap-6">
-      <h1 className="text-cyan font-long uppercase text-4xl md:text-6xl text-center">
-        Arrival
-      </h1>
-      <p className="text-white/60 text-sm md:text-base text-center max-w-md leading-relaxed">
-        Willkommen, Wanderer. Melde dich an, um dein Abbild
-        in der Neuen Welt zu erschaffen.
-      </p>
-      <button
-        type="button"
-        onClick={() => setShowAuth(true)}
-        className="px-8 py-4 bg-cyan text-[#0d0d0d] rounded-lg font-round-bold text-base hover:bg-cyan/80 transition-colors"
-      >
-        Anmelden &amp; starten
-      </button>
-
-      <AuthModal
-        isOpen={showAuth}
-        onClose={() => setShowAuth(false)}
-        onSuccess={() => setShowAuth(false)}
-        title="Anmelden"
-      />
-    </div>
-  )
-}
-
 const ArrivalPage = () => {
   const { user, isAuthenticated, isLoading } = useAuth()
   const arrival = useArrival()
 
+  // Not logged in → back to home
+  if (!isLoading && !isAuthenticated) {
+    return <Navigate to="/" replace />
+  }
+
+  // Already has character → dashboard
   if (!isLoading && isAuthenticated && user?.nw_character) {
     return <Navigate to="/dashboard" replace />
   }
 
   const renderStation = () => {
-    // Auth gate: must be logged in to start
-    if (!isLoading && !isAuthenticated) {
-      return <ArrivalGate />
-    }
-
     switch (arrival.phase) {
       case 'idle':
         return (

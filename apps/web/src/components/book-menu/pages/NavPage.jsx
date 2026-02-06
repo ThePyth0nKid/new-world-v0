@@ -8,6 +8,13 @@ const ACTIVE_COLOR_MAP = {
 
 const INACTIVE_CLASSES = 'bg-white/5 border-transparent text-white hover:bg-white/10 hover:border-white/10'
 
+const BASE_ITEMS = [
+  { to: '/', label: 'Playbook', subtitle: 'Home', activeColor: 'cyan' },
+  { to: '/about', label: 'Manifest', subtitle: 'Mission', activeColor: 'cyan' },
+]
+
+const JOIN_ITEM = { to: '/join', label: 'Join', subtitle: 'Crew', activeColor: 'amber' }
+
 const NavPage = ({ onClose }) => {
   const location = useLocation()
   const { user, isAuthenticated } = useAuth()
@@ -15,12 +22,14 @@ const NavPage = ({ onClose }) => {
   const hasCharacter = isAuthenticated && user?.nw_character
 
   const navItems = [
-    { to: '/', label: 'Playbook', subtitle: 'Home', activeColor: 'cyan' },
-    { to: '/about', label: 'Manifest', subtitle: 'Mission', activeColor: 'cyan' },
-    hasCharacter
-      ? { to: '/dashboard', label: 'Dashboard', subtitle: 'Charakter', activeColor: 'cyan' }
-      : { to: '/arrival', label: 'Arrival', subtitle: 'Charakter', activeColor: 'cyan' },
-    { to: '/join', label: 'Join', subtitle: 'Crew', activeColor: 'amber' },
+    ...BASE_ITEMS,
+    ...(isAuthenticated
+      ? [hasCharacter
+          ? { to: '/dashboard', label: 'Dashboard', subtitle: 'Charakter', activeColor: 'cyan' }
+          : { to: '/arrival', label: 'Arrival', subtitle: 'Charakter', activeColor: 'cyan' }
+        ]
+      : []),
+    JOIN_ITEM,
   ]
 
   return (
